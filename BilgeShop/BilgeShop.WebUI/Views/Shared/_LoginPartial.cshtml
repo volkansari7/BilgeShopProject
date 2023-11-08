@@ -1,0 +1,24 @@
+﻿@model LoginViewModel
+
+<h6 class="mb-3">Hızlı ve güvenli alışverişe giriş yapın!</h6>
+<form method="post" asp-controller="Auth" asp-action="Login">
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" asp-for="Email" placeholder="Mail Adresi">
+        <label for="floatingInput">Mail Adresi</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="floatingPassword" asp-for="Password" placeholder="Şifre">
+        <label for="floatingPassword" >Şifre</label>
+    </div>
+    <div class="clearfix"></div>
+    <div class="d-grid gap-2 mt-3">
+        <button class="btn btn-secondary fw-bold" type="submit">Giriş Yap</button>
+    </div>
+</form>
+
+<hr>
+<h4 class="fw-bold">Henüz Üye Değilmisiniz?</h4>
+<p>Kolayca Üye Olabilirsiniz.</p>
+<div class="d-grid gap-2 mt-3">
+    <a asp-controller="Auth" asp-action="Register" class="btn btn-dark fw-bold"><i class="fa-solid fa-user-plus"></i> Hemen Üye Ol</a>
+</div>

@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section blogheader {
+    <partial name="_BlogHeader">
+    }
+
+    <div class="card text-bg-dark my-4">
+        <img src="~/img/post-1.png" class="card-img" alt="...">
+        <div class="card-img-overlay">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small>Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+
+    <div class="card text-bg-dark my-4">
+        <img src="~/img/post-2.png" class="card-img" alt="...">
+        <div class="card-img-overlay">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small>Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+
+    <div class="card text-bg-dark my-4">
+        <img src="~/img/post-3.png" class="card-img" alt="...">
+        <div class="card-img-overlay">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small>Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination pagination-lg justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link link-secondary">Önceki</a>
+            </li>
+            <li class="page-item"><a class="page-link link-dark" href="#">1</a></li>
+            <li class="page-item"><a class="page-link link-secondary" href="#">2</a></li>
+            <li class="page-item"><a class="page-link link-secondary" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link link-secondary" href="#">Sonraki</a>
+            </li>
+        </ul>
+    </nav>

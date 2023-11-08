@@ -1,0 +1,93 @@
+﻿@model List<ProductListViewModel>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<ol class="breadcrumb my-4">
+    <li class="breadcrumb-item active">Ürün Listesi</li>
+</ol>
+
+<table class="table table-striped" id="ProductTable">
+    <thead>
+        <tr>
+            <th style="width: 150px"></th>
+            <th>Ürün Adı</th>
+            <th>Birim Fiyatı</th>
+            <th>Stok Miktarı</th>
+            <th>Kategori</th>
+            <th>Sil</th>
+            <th>Düzenle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (string.IsNullOrWhiteSpace(item.ImagePath))
+                    {
+                        <img width="120" height="120" src="~/img/no-image.jpg" />
+                    }
+                    else
+                    {
+                        <img width="120" height="120" src="~/img/product/@item.ImagePath" />
+                    }
+                </td>
+                <td class="align-middle">@item.Name</td>
+                <td class="align-middle">@item.UnitPrice</td>
+                <td class="align-middle">@item.UnitsInStock</td>
+                <td class="align-middle">@item.CategoryName</td>
+                <td class="align-middle"><a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Sil</a></td>
+                <td class="align-middle"><a asp-controller="Product" asp-action="Update" asp-route-id="@item.Id" class="btn btn-sm btn-secondary">Düzenle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts{
+    <script>
+        var table = new DataTable('#ProductTable', {
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/tr.json',
+            },
+            pageLenght: 3
+        });
+
+        $('.btnDelete').click(function (e) {
+            e.preventDefault();
+            var productId = $(this).data('id');
+
+            Swal.fire({
+                title: "Emin misiniz?",
+                text: "Dikkat! Ürün silinecektir.",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Evet, Onaylıyorum.",
+                cancelButtonText: "İptal"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '/admin/product/delete/' + productId,
+                        method: 'GET' // url üzerinden istek attım.
+                    }).done(function () {
+                        Swal.fire({
+                            title: "Silindi!",
+                            text: "Ürün başarıyla silindi.",
+                            icon: "success"
+                        }).then(() => { window.location.reload() })
+                    }).fail(function () {
+                        Swal.fire({
+                            title: "Hata!",
+                            text: "Ürün silinirken bir hata ile karşılaşıldı.",
+                            icon: "error"
+                        })
+                    })
+                }
+            });
+        })
+    </script>
+}

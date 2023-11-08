@@ -1,0 +1,85 @@
+﻿@model RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="text-center py-3">
+    <h2>Kayıt Ol</h2>
+</div>
+
+<div class="row">
+    <div class="col-6 border-end">
+        <form method="post" asp-controller="Auth" asp-action="Register">
+            <div>
+                <label for="FirstName" class="form-label" asp-for="FirstName"></label>
+                <i class="fa-solid fa-circle-exclamation text-danger ms-1 fa-xs"></i>
+                <input type="text" id="FirstName" class="form-control" asp-for="FirstName" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="mt-2">
+                <label for="LastName" class="form-label" asp-for="LastName"></label>
+                <i class="fa-solid fa-circle-exclamation text-danger ms-1 fa-xs"></i>
+                <input type="text" id="LastName" class="form-control" asp-for="LastName" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="mt-2">
+                <label for="Email" class="form-label" asp-for="Email"></label>
+                <i class="fa-solid fa-circle-exclamation text-danger ms-1 fa-xs"></i>
+                <input type="email" id="Email" class="form-control" asp-for="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mt-2">
+                <label for="Password" class="form-label" asp-for="Password"></label>
+                <i class="fa-solid fa-circle-exclamation text-danger ms-1 fa-xs"></i>
+                <input type="password" id="Password" class="form-control" asp-for="Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="mt-2">
+                <label for="ConfirmPassword" class="form-label" asp-for="PasswordConfirm"></label>
+                <i class="fa-solid fa-circle-exclamation text-danger ms-2 fa-xs"></i>
+                <input type="password" id="ConfirmPassword" class="form-control" asp-for="PasswordConfirm" />
+                <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-secondary mt-3 form-control fw-bold">Kayıt Ol</button>
+        </form>
+    </div>
+    <div class="col-6">
+        <h5>1. Üyelik Şartları:</h5>
+        <p>
+            1.1. Bu web sitesine üye olmak için en az 18 yaşında veya yasal yaş sınırını aşmış olmalısınız.
+        </p>
+
+        <p>
+            1.2. Kayıt sırasında verdiğiniz bilgilerin doğru, güncel ve eksiksiz olması gerekmektedir. Bilgilerinizde değişiklik olduğunda, bunları güncellemeniz gerekmektedir.
+        </p>
+
+        <p>
+            1.3. Üyelik bilgilerinizi başkalarıyla paylaşmamanız önemlidir. Kullanıcı adı ve şifrenizi gizli tutmalısınız.
+
+        </p>
+        <h5>2. Kullanım Şartları:</h5>
+
+        <p>
+            2.1. Bu web sitesini kullanırken yasa dışı veya kötü niyetli faaliyetlerde bulunmak yasaktır.
+
+        </p>
+        <p>
+            2.2. Site üzerindeki içerikleri kopyalamak, değiştirmek veya dağıtmak yasaktır.
+        </p>
+        <p>
+            2.3. Diğer kullanıcılar veya üçüncü tarafların gizliliğine saygı göstermek önemlidir. Kişisel bilgileri izinsiz olarak paylaşmamalısınız.
+        </p>
+    </div>
+</div>
+
+<script>
+    var Error = "@ViewBag.Error";
+    if (Error != "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'Hata!',
+            text: Error
+        })
+    }
+</script>

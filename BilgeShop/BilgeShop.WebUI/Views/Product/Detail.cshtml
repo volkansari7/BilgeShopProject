@@ -1,0 +1,35 @@
+﻿@model ProductViewModel
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section detailheader {
+    <partial name="_DetailHeader">
+    }
+
+<div class="card mt-4">
+    <div class="row g-0">
+        <div class="col-md-4">
+            @if (!string.IsNullOrWhiteSpace(Model.ImagePath))
+            {
+                <img src="~/img/product/@Model.ImagePath" class="img-fluid rounded-start" alt="@Model.Name">
+
+            }
+            else
+            {
+                <img src="~/img/no-image.jpg" class="card-img-top border-bottom" alt="@Model.Name">
+            }
+
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Name</h5>
+                <p class="card-text">@Model.Description</p>
+                <p class="card-text">@Model.UnitPrice ₺</p>
+                    <p class="card-text"><button class="btn btn-outline-secondary">Satın Al</button> <button class="btn btn-outline-secondary">Sepete Ekle</button></p>
+            </div>
+        </div>
+    </div>
+</div>

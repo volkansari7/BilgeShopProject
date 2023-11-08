@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section contactheader {
+    <partial name="_ContactHeader">
+    }
+   
+    <div class="row my-4">
+        <div class="col-lg-6 col-md-12 border-end">
+            <h4>Mağazalarımızdan birini ziyaret edin veya bizimle iletişime geçin.</h4>
+            <p><i class="fa-solid fa-map-location-dot fa-lg"></i> Göksu, Altay Mah, 1. TBMM Cd. No: 57, Etimesgut/Ankara</p>
+            <p><i class="fa-solid fa-envelope fa-lg"></i> bilgeshop@contact.com</p>
+            <p><i class="fa-solid fa-phone fa-lg"></i> +90 545 245 69 63</p>
+            <p><i class="fa-regular fa-clock fa-lg"></i> Pzt - Cum / 09.30 - 18.00</p>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d330.7584919750333!2d32.61055404425839!3d39.98293755446047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d331ad1f15226b%3A0x8bc427961b86e059!2sXSide!5e0!3m2!1str!2str!4v1699051379989!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="row border p-3 rounded">
+        <div class="col-lg-8 col-md-12">
+            <h3>Bir Mesaj Gönderin.</h3>
+            <form method="post">
+                <div class="mb-3">
+                    <label for="TextName" class="form-label">Adınız</label>
+                    <input type="text" class="form-control" id="TextName" placeholder="Adınız..">
+                </div>
+                <div class="mb-3">
+                    <label for="TextMail" class="form-label">Email Adresiniz</label>
+                    <input type="email" class="form-control" id="TextMail" placeholder="mail@ornek.com">
+                </div>
+                <div class="mb-3">
+                    <label for="TextSubject" class="form-label">Konu</label>
+                    <input type="text" class="form-control" id="TextSubject" placeholder="Mesaj Konusu">
+                </div>
+                <div class="mb-3">
+                    <label for="TextMessage" class="form-label">Mesajınız</label>
+                    <textarea class="form-control" id="TextMessage" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-dark float-end">Gönder</button>
+            </form>
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <h4 class="text-center border-bottom fw-light p-1">Çalışanlarımız</h4>
+            <div class="card mb-3 border-0">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="~/img/employee-img/43.jpg" class="img-fluid rounded-circle" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h6>Ahmet Öztürk</h6>
+                            <p><small class="text-body-secondary">Mağaza Müdürü</small></p>
+                            <p><small class="text-body-secondary">ahmetozturk@bilgeshop.com</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 border-0">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="~/img/employee-img/49.jpg" class="img-fluid rounded-circle" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h6>Banu Balyürek</h6>
+                            <p><small class="text-body-secondary">Mağaza Çalışanı</small></p>
+                            <p><small class="text-body-secondary">banubalyurek@bilgeshop.com</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 border-0">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="~/img/employee-img/94.jpg" class="img-fluid rounded-circle" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h6>Bilge Duru</h6>
+                            <p><small class="text-body-secondary">Mağaza Çalışanı</small></p>
+                            <p><small class="text-body-secondary">bilgeduru@bilgeshop.com</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

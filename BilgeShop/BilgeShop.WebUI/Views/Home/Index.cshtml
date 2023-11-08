@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+@section homeheader {
+    <partial name="_HomeHeader">
+    }
+    <div class="row my-4">
+        <div class="col-3">
+            <vc:categories></vc:categories>
+        </div>
+        <div class="col-9">
+            <div class="row">
+                <vc:products category-id="@ViewBag.CategoryId"></vc:products>
+            </div>
+        </div>
+    </div>
+
+@section backtotopscript {
+        <partial name="_BacktoTopScript.cshtml">
+        }
+
+    <a class="btn-gotop"
+       data-action="gotop">
+        <i class="fa-solid fa-arrow-up-long"></i>
+    </a>
+
+
